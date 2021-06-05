@@ -1,14 +1,10 @@
  AWSTemplateFormatVersion: 2010-09-09
 
- Parameters:
-   BucketNme:
-     Type: String
-
  Resources:
    S3Bucket:    
      Type: AWS::S3::Bucket
      Properties:
-       BucketName: !Ref BucketNme
+       BucketName: testingaws333
        AccessControl: PublicRead
        WebsiteConfiguration:
          IndexDocument: index.html
@@ -29,9 +25,9 @@
              Resource: !Join
                - ''
                - - 'arn:aws:s3:::'
-                 - !Ref S3Bucket
+                 - testingaws333
                  - /*
-       Bucket: !Ref S3Bucket			
+       Bucket: testingaws333			
  
  Outputs:
    WebsiteUrl:
